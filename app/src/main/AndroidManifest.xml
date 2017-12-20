@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.helong02.app_in_android.ActivityAppList"/>
+        <activity android:name="com.example.helong02.app_in_android.AppOperatActivity"/>
     </application>
 
 </manifest>

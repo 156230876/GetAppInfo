@@ -1,6 +1,7 @@
 package com.example.helong02.app_in_android;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

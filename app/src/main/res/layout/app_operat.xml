@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/unstall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="unstall"/>
+    <Button
+        android:id="@+id/kill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="kill"/>
+    <Button
+        android:id="@+id/clearCache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="clearCache"/>
+    <Button
+        android:id="@+id/pkg_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pkg"/>
+    <TextView
+        android:id="@+id/pkg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pkg"/>
+
+</LinearLayout>

@@ -40,12 +40,23 @@ public class ActivityAppList extends Activity  {
 //        if(getIntent()!=null){
 //            filter = getIntent().getIntExtra("filter", 0) ;
 //        }
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         filter = intent.getIntExtra("filter",2);
         mlistAppInfo = queryFilterAppInfo(filter); // 查询所有应用程序信息
         // 构建适配器，并且注册到listView
         browseAppAdapter = new BrowseApplicationInfoAdapter(this, mlistAppInfo);
         listview.setAdapter(browseAppAdapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Intent intent1 = mlistAppInfo.get(i).getIntent();
+//                if (intent1 != null)
+//                startActivity(intent1);
+                AppInfo appInfo = mlistAppInfo.get(i);
+                AppOperatActivity.actionStart(ActivityAppList.this,appInfo.getPkgName(),appInfo.getAppLabel(),appInfo.getFalgs());
+
+            }
+        });
     }
 
     // 根据查询条件，查询特定的ApplicationInfo
@@ -105,6 +116,8 @@ public class ActivityAppList extends Activity  {
         appInfo.setAppLabel((String) app.loadLabel(pm));
         appInfo.setAppIcon(app.loadIcon(pm));
         appInfo.setPkgName(app.packageName);
+        appInfo.setIntent(pm.getLaunchIntentForPackage(app.packageName));
+        appInfo.setFalgs(app.flags);
         return appInfo;
     }
 }

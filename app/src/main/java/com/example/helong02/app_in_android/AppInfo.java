@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 //Model类 ，用来存储应用程序信息
 public class AppInfo {
 
+    private int flags; // 应用类型
     private String appLabel;    //应用程序标签
     private Drawable appIcon ;  //应用程序图像
     private Intent intent ;     //启动应用程序的Intent ，一般是Action为Main和Category为Lancher的Activity
@@ -17,6 +18,12 @@ public class AppInfo {
 
     public AppInfo(){}
 
+    public int getFalgs(){
+        return flags;
+    }
+    public void setFalgs(int flag){
+        this.flags = flag;
+    }
     public String getAppLabel() {
         return appLabel;
     }
